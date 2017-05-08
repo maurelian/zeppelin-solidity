@@ -17,11 +17,11 @@ contract StandardToken is BasicToken, ERC20 {
   mapping (address => mapping (address => uint)) allowed;
 
   /**
-  * @dev Transfer tokens from one address to another
-  * @param _from address The address which you want to send tokens from
-  * @param _to address The address which you want to transfer to
-  * @param _value uint the amout of tokens to be transfered
-  */
+   * @dev Transfer tokens from one address to another
+   * @param _from address The address which you want to send tokens from
+   * @param _to address The address which you want to transfer to
+   * @param _value uint the amout of tokens to be transfered
+   */
   function transferFrom(address _from, address _to, uint _value) {
     var _allowance = allowed[_from][msg.sender];
 
@@ -35,11 +35,10 @@ contract StandardToken is BasicToken, ERC20 {
   }
 
   /**
-  * @dev Aprove the passed address to spend the specified amout tokens on the
-  msg.sender behalf.
-  * @param _spender address The address which will spend the funds.
-  * @param _value uint the amout of tokens to be spended.
-  */
+   * @dev Aprove the passed address to spend the specified amount of tokens on beahlf of msg.sender.
+   * @param _spender The address which will spend the funds.
+   * @param _value The amount of tokens to be spent.
+   */
   function approve(address _spender, uint _value) {
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
