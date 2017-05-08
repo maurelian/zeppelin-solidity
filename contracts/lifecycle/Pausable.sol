@@ -6,43 +6,45 @@ import "../ownership/Ownable.sol";
 
 /**
  * @title Pausable
- * @dev Base contract which allows children to implement an emergency stop mechanism.
+ * @dev Base contract which allows children to implement a pause mechanism.
  */
 contract Pausable is Ownable {
-  bool public stopped;
+  event Pause();
+  event Unpause();
+
+  bool public paused = false;
 
   /**
-   * @dev Modifier to ensure that the contract is not in a stopped state.
+   * @dev Modifier to check that the contract is not paused.
    */
-  modifier stopInEmergency {
-    if (stopped) {
-      throw;
-    }
+  modifier whenNotPaused() {
+    if (paused) throw;
     _;
   }
 
   /**
-   * @dev Modifier to ensure that the contract is in a stopped state.
+   * @dev Modifier to ensure that the contract is paused.
    */
-  modifier onlyInEmergency {
-    if (!stopped) {
-      throw;
-    }
+  modifier whenPaused {
+    if (!paused) throw;
     _;
   }
 
   /**
-   * @dev Called by the owner in an emergency, triggers stopped state.
+   * @dev Called by the owner to pause, triggers stopped state.
    */
-  function emergencyStop() external onlyOwner {
-    stopped = true;
+  function pause() onlyOwner whenNotPaused returns (bool) {
+    paused = true;
+    Pause();
+    return true;
   }
 
   /**
-   * @dev Called by the owner after an emergency situation is resolved, returns to normal state.
+   * @dev Called by the owner to unpause, returns to normal state
    */
-  function release() external onlyOwner onlyInEmergency {
-    stopped = false;
+  function unpause() onlyOwner whenPaused returns (bool) {
+    paused = false;
+    Unpause();
+    return true;
   }
-
 }
