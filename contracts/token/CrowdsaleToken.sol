@@ -7,8 +7,8 @@ import "./StandardToken.sol";
 /**
  * @title CrowdsaleToken
  *
- * @dev Simple ERC20 Token example, with crowdsale token creation
- * @dev IMPORTANT NOTE: do not use or deploy this contract as-is. It needs some changes to be 
+ * @notice Simple ERC20 Token example, with crowdsale token creation
+ * @notice IMPORTANT NOTE: do not use or deploy this contract as-is. It needs some changes to be 
  * production ready.
  */
 contract CrowdsaleToken is StandardToken {
@@ -24,7 +24,7 @@ contract CrowdsaleToken is StandardToken {
   uint public constant PRICE = 500;
 
   /**
-   * @dev Fallback function which receives ether and sends the appropriate number of tokens to the 
+   * @dev Fallback function which receives ether and sends the appropriate number of tokens to the
    * msg.sender.
    */
   function () payable {
@@ -52,7 +52,7 @@ contract CrowdsaleToken is StandardToken {
 
   /**
    * @dev replace this with any other price function
-   * @return The price per unit of token. 
+   * @return The price per unit of token.
    */
   function getPrice() constant returns (uint result) {
     return PRICE;

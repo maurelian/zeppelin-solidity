@@ -6,7 +6,7 @@ import "../ownership/Ownable.sol";
 
 /**
  * @title Pausable
- * @dev Base contract which allows children to implement a pause mechanism.
+ * @notice Base contract which allows children to implement a pause mechanism.
  */
 contract Pausable is Ownable {
   event Pause();

@@ -6,7 +6,7 @@ import '../SafeMath.sol';
 
 /**
  * @title PullPayment
- * @dev Base contract supporting async send for pull payments. Inherit from this
+ * @notice Base contract supporting async send for pull payments. Inherit from this
  * contract and use asyncSend instead of send.
  */
 contract PullPayment {

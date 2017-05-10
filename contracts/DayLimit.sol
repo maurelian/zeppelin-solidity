@@ -2,7 +2,7 @@ pragma solidity ^0.4.8;
 
 /**
  * @title DayLimit
- * @dev Base contract that enables methods to be protected by placing a linear limit (specifiable)
+ * @notice Base contract that enables methods to be protected by placing a linear limit (specifiable)
  * on a particular resource per calendar day. Is multiowned to allow the limit to be altered.
  */
 contract DayLimit {

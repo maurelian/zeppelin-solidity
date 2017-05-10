@@ -8,9 +8,9 @@ import './ERC20.sol';
 /**
  * @title Standard ERC20 token
  *
- * @dev Implemantation of the basic standart token.
- * @dev https://github.com/ethereum/EIPs/issues/20
- * @dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
+ * @notice Implemantation of the basic standart token.
+ * @notice https://github.com/ethereum/EIPs/issues/20
+ * @notice Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 contract StandardToken is BasicToken, ERC20 {
 

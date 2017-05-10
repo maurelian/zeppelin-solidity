@@ -4,9 +4,9 @@ import './StandardToken.sol';
 import '../lifecycle/Pausable.sol';
 
 /**
- * Pausable token
+ * @title Pausable token
  *
- * Simple ERC20 Token example, with pausable token creation
+ * @notice Simple ERC20 Token example, with pausable token creation
  * Issue:
  * https://github.com/OpenZeppelin/zeppelin-solidity/issues/194
  * Based on code by BCAPtoken:
@@ -15,10 +15,21 @@ import '../lifecycle/Pausable.sol';
 
 contract PausableToken is Pausable, StandardToken {
 
+  /**
+  * @dev Transfer from one addres to another.
+  * @param _to address The addres to transfer to
+  * @param _value uint The value to transfer
+  */
   function transfer(address _to, uint _value) whenNotPaused {
     return super.transfer(_to, _value);
   }
 
+  /**
+  * @dev Transfer from one addres to another.
+  * @param _to address The addres to transfer to
+  * @param _from address The addres to transfer from
+  * @param _value uint The value to transfer
+  */
   function transferFrom(address _from, address _to, uint _value) whenNotPaused {
     return super.transferFrom(_from, _to, _value);
   }

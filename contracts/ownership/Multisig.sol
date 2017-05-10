@@ -3,7 +3,7 @@ pragma solidity ^0.4.8;
 
 /**
  * @title Multisig
- * @dev Interface contract for multisig proxy contracts; see below for docs.
+ * @notice Interface contract for multisig proxy contracts; see below for docs.
  */
 contract Multisig {
   // EVENTS

@@ -7,7 +7,7 @@ import './lifecycle/Destructible.sol';
 
 /**
  * @title Bounty
- * @dev This bounty will pay out to a researcher if they break invariant logic of the contract.
+ * @notice This bounty will pay out to a researcher if they break invariant logic of the contract.
  */
 contract Bounty is PullPayment, Destructible {
   bool public claimed;
@@ -25,7 +25,7 @@ contract Bounty is PullPayment, Destructible {
   }
 
   /**
-   * @dev Create and deploy the target contract (extension of Target contract), and sets the 
+   * @dev Create and deploy the target contract (extension of Target contract), and sets the
    * msg.sender as a researcher
    * @return A target contract
    */
@@ -44,7 +44,7 @@ contract Bounty is PullPayment, Destructible {
 
   /**
    * @dev Sends the contract funds to the researcher that proved the contract is broken.
-   * @param Target contract
+   * @param target Target contract
    */
   function claim(Target target) {
     address researcher = researchers[target];
@@ -64,15 +64,15 @@ contract Bounty is PullPayment, Destructible {
 
 /**
  * @title Target
- * @dev Your main contract should inherit from this class and implement the checkInvariant method.
+ * @notice Your main contract should inherit from this class and implement the checkInvariant method.
  */
 contract Target {
 
    /**
-    * @dev Checks all values a contract assumes to be true all the time. If this function returns 
-    * false, the contract is broken in some way and is in an inconsistent state. 
-    * In order to win the bounty, security researchers will try to cause this broken state. 
-    * @return True if all invariant values are correct, false otherwise. 
+    * @dev Checks all values a contract assumes to be true all the time. If this function returns
+    * false, the contract is broken in some way and is in an inconsistent state.
+    * In order to win the bounty, security researchers will try to cause this broken state.
+    * @return True if all invariant values are correct, false otherwise.
     */
   function checkInvariant() returns(bool);
 }

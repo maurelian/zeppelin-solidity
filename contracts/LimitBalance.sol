@@ -3,16 +3,16 @@ pragma solidity ^0.4.8;
 
 /**
  * @title LimitBalance
- * @dev Simple contract to limit the balance of child contract.
- * @dev Note this doesn't prevent other contracts to send funds by using selfdestruct(address);
- * @dev See: https://github.com/ConsenSys/smart-contract-best-practices#remember-that-ether-can-be-forcibly-sent-to-an-account
+ * @notice Simple contract to limit the balance of child contract.
+ * @notice Note this doesn't prevent other contracts to send funds by using selfdestruct(address);
+ * @notice See: https://github.com/ConsenSys/smart-contract-best-practices#remember-that-ether-can-be-forcibly-sent-to-an-account
  */
 contract LimitBalance {
 
   uint public limit;
 
   /**
-   * @dev Constructor that sets the passed value as a limit. 
+   * @dev Constructor that sets the passed value as a limit.
    * @param _limit Uint to represent the limit.
    */
   function LimitBalance(uint _limit) {

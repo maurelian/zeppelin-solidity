@@ -4,15 +4,15 @@ pragma solidity ^0.4.8;
 import "../ownership/Ownable.sol";
 import "../token/ERC20Basic.sol";
 
-/** 
+/**
  * @title TokenDestructible:
  * @author Remco Bloemen <remco@2π.com>
- * @dev Base contract that can be destroyed by owner. All funds in contract including
+ * @notice Base contract that can be destroyed by owner. All funds in contract including
  * listed tokens will be sent to the owner.
  */
 contract TokenDestructible is Ownable {
 
-  /** 
+  /**
    * @notice Terminate contract and refund to owner
    * @param tokens List of addresses of ERC20 or ERC20Basic token contracts to
    refund.
